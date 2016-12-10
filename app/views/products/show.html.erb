@@ -1,0 +1,11 @@
+<% provide(:title, @product.name) %>
+<div class="wrapper_product">
+<h3><%= @product.name %></h3>
+<div class="big_image">
+  <%= image_tag(@product.image) %>
+</div>
+<div class="about">
+  <p>Цена: <b><%= @product.price %></b> бел.руб.</p>
+  <p><%= @product.details %></p>
+</div>
+</div>

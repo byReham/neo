@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   get  '/contact',    to: 'pages#contact'
   
   get  '/signup',     to: 'users#new'
+  post '/signup',     to: 'users#create'
   
   get 'products/new', to: 'products#new'
+  
+  resources :users
+  resources :products
   
 end
 

@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   get  '/signup',     to: 'users#new'
   post '/signup',     to: 'users#create'
   
-  get 'products/new', to: 'products#new'
-  get 'products/all', to: 'products#all'
+  get  'products/new', to: 'products#new'
+  get  'products/all', to: 'products#all'
+  
+  get    '/login', to: 'sessions#new'
+  post   '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   
   resources :users
   resources :products

@@ -1,0 +1,40 @@
+<% provide(:title, "Товары и услуги") %>
+<div class="visible-xs ot">
+</div>
+<div class="container-fluid" style="padding-right: 20px;">
+  <div class="row">
+   <div class="col-md-3 navbar-left"
+    <p><h3>Все товары:</h3></p>
+    <ul class="list-unstyled" role="navigation">
+      <li><%= link_to "Абразивный инструмент", '#' %></li>
+      <li><%= link_to "Алмазный инструмент", '#' %></li>
+      <li><%= link_to "Измерительный инструмент", '#' %></li>
+      <li><%= link_to "Пневмоинструмент", '#' %></li>
+      <li><%= link_to "Режущий инструмент", '#' %></li>
+      <li><%= link_to "Алмазный инструмент", '#' %></li>
+      <li><%= link_to "Измерительный инструмент", '#' %></li>
+      <li><%= link_to "Пневмоинструмент", '#' %></li>
+      <li><%= link_to "Режущий инструмент", '#' %></li>
+    </ul>
+   </div>
+   <div class="col-md-9">
+    <div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12 slider hidden-xs">
+     <%= image_tag('backfone1.jpg') %>
+     </div>
+     <% @all_product.each do |product| %>
+     <div class="col-xs-12 col-sm-4 col-md-3" style="padding-left: inherit;">
+      <div class="thumbnail box center">
+        <p><b><%= product.name %></b></p>
+        <%= image_tag(product.image) %>
+        <div class="caption bottom">
+          <div class="box-price"><b><%= product.price %> руб/шт</b></div>
+          <a href= <%= "/products/#{product.id}" %> class="btn btn-primary detail" role="button">Детали</a> <a href="#" class="btn btn-default add" role="button">Отложить</a>
+        </div>
+      </div>
+     </div>
+     <% end %>
+    </div>
+   </div>
+  </div>
+</div>

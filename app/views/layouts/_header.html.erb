@@ -1,41 +1,46 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "ООО НеоСнабТрэйд", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav navbar-nav navbar-right">
+<header>
+  <div class="navbar navbar-fixed-top navbar-inverse ">
+    <div class="container">
+      <%= link_to "ООО НеоСнабТрэйд", root_path, id: "logo" %>
+      <div class="dropdown visible-xs" style="margin-bottom:15px">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Меню<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
           <li><%= link_to "Главная", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
+          <li><%= link_to "Товары и услуги", products_all_path %></li>
+          <li><%= link_to "О компании",   about_path %></li>
+          <li><%= link_to "Контакты", contact_path %></li>
+        </ul>
+      </div>
+      <nav class="hidden-xs">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Помощь", help_path %></li>
           <li><%= link_to "Войти", '#' %></li>
         </ul>
       </nav>
     </div>
-</header>
-<div class="navbar">
-  <div class="container">
-   <%= link_to image_tag("logo_snab.png", alt: "НеоСнабТрэйд"), root_path %>
-   <div class="top-contact">
-     <h3>+375 (29) 752 - 22 - 85</h3>
-     <h4>e-mail: halfamazzin@gmail.com</h4>
-   </div>
-    <nav>
-      <ul class="nav navbar-nav navbar-inverse">
-       <li><%= link_to "Инструменты", '#' %></li>
-         <ul style="display:none">
-           <li><%= link_to "Абразивный инструмент", '#' %></li>
-           <li><%= link_to "Алмазный инструмент", '#' %></li>
-           <li><%= link_to "Измерительный инструмент", '#' %></li>
-           <li><%= link_to "Пневмоинструмент", '#' %></li>
-           <li><%= link_to "Режущий инструмент", '#' %></li>
-         </ul>
-       <li><%= link_to "Приборы", '#' %></li>
-         <ul style="display:none">
-           <li><%= link_to "Лабораторные приборы и оборудование", '#' %></li>
-           <li><%= link_to "Приборы контроля, регулирования и автоматики", '#' %></li>
-         </ul>
-       <li><%= link_to "Резинотехнические изделия", '#' %></li>
-       <li><%= link_to "Ремонт и обслуживание оборудования", '#' %></li>
-       <li style="display:none"><%= link_to "Сыпучие строительные материалы", '#' %></li>
-     </ul>
-    </nav>
   </div>
-</div>
+<!-- end of top-fixed header -->   
+  <div class="container hidden-xs">
+    <div class="header_info">
+      <!--<div id="logo_image">
+      <%= link_to image_tag("logo_snab.png", alt: "НеоСнабТрэйд"), root_path %>
+      </div>-->
+      <div class="contact">
+        <h3>+375 (29) 752 - 22 - 85</h3>
+        <h4>e-mail: halfamazzin@gmail.com</h4>
+      </div>
+    </div>
+    <div class="main-menu">
+      <nav>
+        <ul class="navbar list-unstyled  list-inline">
+          <li><%= link_to "Главная", root_path %></li>
+          <li><%= link_to "Товары и услуги", products_all_path %></li>
+          <li><%= link_to "О компании",   about_path %></li>
+          <li><%= link_to "Контакты", contact_path %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- http://adukar.by/images/photo/ingener11.jpg -->

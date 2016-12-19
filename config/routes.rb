@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/signup',     to: 'users#create'
   
   get 'products/new', to: 'products#new'
+  get 'products/all', to: 'products#all'
   
   resources :users
   resources :products

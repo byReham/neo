@@ -3,12 +3,10 @@
         <p>
           <b><%= product.name %></b>
           <% if logged_in? && current_user.admin? %>
-            
             | <%= link_to "delete", product, method: :delete,
             data: { confirm: "You sure?" } %>
             | <%= link_to "edit",  edit_product_path(product) %>
-            <% end %>
-          
+          <% end %>
         </p>
         <%= image_tag(product.image) %>
         <div class="caption bottom">

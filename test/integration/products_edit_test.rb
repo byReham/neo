@@ -4,9 +4,11 @@ class ProductsEditTest < ActionDispatch::IntegrationTest
 
   def setup
     @product = products(:one)
+    @admin   = users(:michael)
   end
 
   test "unsuccessful edit" do
+    log_in_as(@admin)
     get edit_product_path(@product)
     assert_template 'products/edit'
     patch product_path(@product), params: { product: { name:  "",

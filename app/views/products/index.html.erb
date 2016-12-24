@@ -23,12 +23,13 @@
      <div class="col-xs-12 col-sm-12 col-md-12 slider hidden-xs">
      <%= image_tag('backfone1.jpg') %>
      </div>
-     
+     <% if logged_in? && current_user.admin? %>
      <a href="products/new">
       <div class="col-xs-12 col-sm-4 col-md-3" style="padding-left: inherit;">
        <div class="thumbnail box center"> <p>Добавить товар</p> </div> 
       </div>
-     </a>      
+     </a>
+     <% end %>      
      <%= render @products %>
      <div class="col-xs-12 col-sm-12 col-md-12 pagination">
      <%= will_paginate %>

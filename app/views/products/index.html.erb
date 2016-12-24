@@ -17,23 +17,22 @@
       <li><%= link_to "Режущий инструмент", '#' %></li>
     </ul>
    </div>
+   
    <div class="col-md-9">
     <div class="row">
      <div class="col-xs-12 col-sm-12 col-md-12 slider hidden-xs">
      <%= image_tag('backfone1.jpg') %>
      </div>
-     <% @all_product.each do |product| %>
-     <div class="col-xs-12 col-sm-4 col-md-3" style="padding-left: inherit;">
-      <div class="thumbnail box center">
-        <p><b><%= product.name %></b></p>
-        <%= image_tag(product.image) %>
-        <div class="caption bottom">
-          <div class="box-price"><b><%= product.price %> руб/шт</b></div>
-          <a href= <%= "/products/#{product.id}" %> class="btn btn-primary detail" role="button">Детали</a> <a href="#" class="btn btn-default add" role="button">Отложить</a>
-        </div>
+     
+     <a href="products/new">
+      <div class="col-xs-12 col-sm-4 col-md-3" style="padding-left: inherit;">
+       <div class="thumbnail box center"> <p>Добавить товар</p> </div> 
       </div>
+     </a>      
+     <%= render @products %>
+     <div class="col-xs-12 col-sm-12 col-md-12 pagination">
+     <%= will_paginate %>
      </div>
-     <% end %>
     </div>
    </div>
   </div>

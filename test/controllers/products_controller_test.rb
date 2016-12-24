@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get products_new_path
+    get add_product_path
     assert_response :success
   end
 

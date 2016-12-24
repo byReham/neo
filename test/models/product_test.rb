@@ -3,7 +3,7 @@ require 'test_helper'
 class ProductTest < ActiveSupport::TestCase
 
   def setup
-    @product = Product.new(name: "Example Product", price: 1, image: "1.png", details: "few word about this product")
+    @product = Product.new(name: "Example Product", price: "1.00", image: "1.png", details: "few word about this product")
   end
 
   test "should be valid" do

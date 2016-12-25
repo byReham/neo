@@ -14,9 +14,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Добро пожаловать в онлайн магазин ООО НеоСнабТрейд!"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Пожалйста проверьте почту для активации вашей учетной записи."
+      redirect_to root_url
     else
       render 'new'
     end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   
    def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Профиль обновлен!"
+      flash[:success] = "Учетная запись обновлена!"
       redirect_to @user
     else
       render 'edit'
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "Профиль удален!"
+    flash[:success] = "Учетная запись удалена!"
     redirect_to users_url
   end
 
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Пожалуйста авторизируйтесь!"
+        flash[:danger] = "Пожалуйста войдите под своей учетной записью!"
         redirect_to login_url
       end
     end

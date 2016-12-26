@@ -1,14 +1,14 @@
 <%= form_for(@product) do |f| %>
-  <%= f.label :name %>
+  <%= f.label :name, "Название" %>
   <%= f.text_field :name, class: 'form-control' %>
 
-  <%= f.label :price %>
+  <%= f.label :price, "Цена" %>
   <%= f.text_field :price, class: 'form-control' %>
 
-  <%= f.label :image %>
+  <%= f.label :image, "Изображение" %>
   <%= f.text_field :image, class: 'form-control' %>
       
-  <%= f.label :details %>
+  <%= f.label :details, "Описание" %>
   <%= f.text_area :details, class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>

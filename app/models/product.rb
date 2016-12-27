@@ -4,4 +4,6 @@ class Product < ApplicationRecord
   validates :image,   presence: true
   validates :details, presence: true
   
+  self.per_page=20
+  
 end

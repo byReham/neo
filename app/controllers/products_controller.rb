@@ -48,8 +48,8 @@ before_action :admin_user,     only: [:new, :create, :edit, :update, :destroy]
   private
 
     def product_params
-      params.require(:product).permit(:name, :price, :image,
-                                   :details)
+      params.require(:product).permit(:category, :rubric, :name, :price, :min_order, :descriptions, :image,
+ :vendor_code)
     end
      
     # Confirms an admin user.

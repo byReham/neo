@@ -1,3 +1,11 @@
+require 'csv'
+
+CSV.foreach(Rails.root.join("db/seeds_data/data.csv")) do |row|
+  Product.create!(category: row[0], rubric: row[1], name: row[2], price: row[3], min_order: row[4], description: row[5], image: row[6], vendor_code: row[7])
+end
+
+
+
 User.create!(name:  "Boss",
              email: "mihailrehmunov@gmail.com",
              password:              "12345678",
@@ -18,6 +26,7 @@ User.create!(name:  "Boss",
               activated_at: Time.zone.now)
 end
 
+=begin
 Product.create!(name:  "Example Product",
              price: "5.99",
              image:              "397_big.jpg",
@@ -33,3 +42,4 @@ Product.create!(name:  "Example Product",
                image:   image,
                details: details)
 end
+=end

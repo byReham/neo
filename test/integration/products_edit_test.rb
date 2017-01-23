@@ -14,7 +14,7 @@ class ProductsEditTest < ActionDispatch::IntegrationTest
     patch product_path(@product), params: { product: { name:  "",
                                               price: "0.00",
                                               image:              "32.jpg",
-                                              details: "bla-bla-bla" } }
+                                              description: "bla-bla-bla" } }
 
     assert_template 'products/edit'
   end

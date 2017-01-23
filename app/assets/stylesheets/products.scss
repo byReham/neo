@@ -3,6 +3,7 @@
 .box {
 height:400px;
 max-width: 220px;
+min-width: 146px;
   p {
   min-height:100px;
   }
@@ -27,8 +28,6 @@ right:auto;
 .slider {
 height:300px; 
 margin-bottom:30px; 
-padding-right:0px; 
-margin-left:-15px;
 border-bottom:4px solid #E01425;
   img {
   width: 100%;

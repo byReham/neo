@@ -1,13 +1,15 @@
 <% provide(:title, @product.name) %>
-<div class="wrapper_product">
-<h3><%= @product.name %></h3>
-<div class="big_image">
-  <%= image_tag(@product.image) %>
-</div>
-<div class="about">
-  <p>Цена: <b><%= @product.price %></b> бел.руб.</p>
-  <p>Минимальный заказ: <%= @product.min_order %></p>
-  <p><%= @product.description %></p>
-  <p><%= @product.vendor_code %></p>
-</div>
-</div>
+
+  <h1><%= @product.name %></h1>
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag(@product.image) %>
+      <p>Цена: <b><%= @product.price %></b> бел.руб.</p>
+      <p><%= "Минимальный заказ: #{@product.min_order}" %></p>
+    </div>
+    <div class="col-md-9 text-left">
+      <p style="white-space: normal"><%= @product.description.split(".").join(". ") %></p>
+      <p><%= "Артикул: #{@product.vendor_code}" if @product.vendor_code.size > 1 %></p>
+    </div>
+  </div>
+

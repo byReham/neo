@@ -7,12 +7,25 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <header>
+      <%= render 'layouts/topfixed-nav' %> 
+      <div class="hidden-xs">
+        <%= render 'layouts/top-info' %> 
+        <%= render 'layouts/carousel' %>
+        <%#= render 'layouts/main-nav' %>        
+      </div>
+    </header>
+    <hr>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
-      <%= yield %>
+      <div class="container-fluid" style="padding-right: 20px;">
+        <div class="row">
+          <%= render 'layouts/left-menu' %>
+          <%= yield %>
+        </div>
+      </div>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>

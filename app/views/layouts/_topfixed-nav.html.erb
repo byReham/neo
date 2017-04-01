@@ -1,0 +1,34 @@
+<div class="top-nav">
+  <div class="container">
+    <nav class="hidden-xs">
+
+    <ul class="nav navbar-nav list-unstyled  list-inline pull-left">
+      <li><%= link_to "Товары и услуги", products_path %></li>
+      <li><%= link_to "Оплата и доставка", delivery_path %></li>
+      <li><%= link_to "О компании",   about_path %></li>
+      <li><%= link_to "Контакты", contact_path %></li>
+    </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li><%= link_to "Пользователи", users_path %></li> 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Учетная запись <b class="caret"></b>
+              </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Учетная запись", current_user %></li>
+              <li><%= link_to "Настройки", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Выйти", logout_path, method: "delete" %>     
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Войти", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <%= render 'layouts/mobile-nav' %>
+  </div>
+</div>

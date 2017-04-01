@@ -5,6 +5,11 @@
 
 $gray-medium-light: #eaeaea;
 
+@mixin background_contacts {
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -14,8 +19,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  background:cornsilk;
-  padding-top: 60px;
+  margin-top: 280px;
 }
 
 section {
@@ -63,59 +67,186 @@ p {
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  /*text-transform: uppercase;*/
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
+header {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:200px;
+  a{
+    color:#000;
+    display:block;
+    &:hover {
+      text-decoration: none;
+      color:#000;
+    }
   }
 }
-#logo_image{
-float:left;
-margin:20px 20px 0px 20px;
+
+.top-nav {
+  background-color:#fff;
+  min-height:30px;
+  border-bottom: 1px solid black;
 }
 
-.navbar-fixed-top {
-background-color:#131414;
+.top-wrapper{
+display: table;
+vertical-align: middle;
+width:1170px;
+margin: auto;
+padding: 20px;
+}
+
+#logo {
+display: table-cell;
+width:300px;
+vertical-align: top;
+}
+
+.contacts-wrapper {
+display: table-cell;
+vertical-align: top;
+float: right;
+width: 650px;
+}
+
+.contacts li {
+display: inline-block;
+padding: 0 0 0 40px;
+height: 40px;
+line-height: 30px;
+width: 200px;
+font-size: 18px;
+}
+
+.mts {
+background-image: image-url('mts.png');
+@include background_contacts;
+}
+
+.velcom {
+background-image: image-url('velcom1.png');
+@include background_contacts;
+}
+
+.viber {
+background-image: image-url('viber.png');
+@include background_contacts;
+}
+
+.skype {
+background-image: image-url('skype.png');
+@include background_contacts;
+}
+
+.email {
+background-image: image-url('email1.png');
+@include background_contacts;
 }
 
 .main-menu {
-border-radius: 30px;
-background:#6F7575;
-height: 70px;
-line-height: 70px;
+background:steelblue;
+height: 50px;
+line-height: 45px;
 text-align:center;
-margin-bottom:50px;
   li{
-    display:inline-block;
-    margin-left: 15px;
-    margin-right: 15px;
-    font-size:22px;
-      a {
-      color: white;
-        &:hover {
-        background:#B3BDBD;
-        font-weight:bold;
-        padding:30px;
-        color: white;
-        text-decoration: none;
-        }
-      }
-   }
+  display:inline-block;
+  font-size:22px;
+  width:250px;
+    &:hover {
+    background:#6F7575; /*#B3BDBD;*/
+    color:#fff;
+    border-bottom: 5px solid red;
+    }
+  }
 }
 
-.header_info{
-height:150px;
-  .contact{
-  margin:20px 20px 0px 20px;
-  float:right;
+/* Carousel */
+
+.brands {
+  width:1170px;
+  height:80px;
+  margin:auto;
+}
+
+.carousel-wrapper{
+  width:100%;
+  height:80px;
+  overflow:hidden;
+}
+
+.frame {
+  display: block;
+  text-align: start;
+  float: none;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: auto;
+  width: 1170px;
+  height: 80px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  text-align: left;
+  float: none;
+  position: absolute;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  left: -200px;
+  z-index: auto;
+  width: 9511px;
+  height: 80px;
+  img {
+    width: 200px;
+    height: 80px;
+    float: left;
+    cursor: pointer;
+    margin-right: 0px;
+  }
+}
+
+.arrow {
+background-color: rgba(235,235,235,.85);
+display: block;
+height: 80px;
+width: 50%;
+top: 0;
+position: absolute;
+cursor:pointer;
+  span{
+  background-color: #1d3149;
+  color: #ffffff;
+  width: 30px;
+  height: 100%;
+  text-align: center;
+  line-height:80px;
+  font-size: 25px;
+  }
+}
+
+.glyphicon{
+  top:0;
+}
+
+.left {
+  left: -555px;
+  span {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.right {
+  right: -555px;
+  span {
+    position: absolute;
+    left: 0;
   }
 }
 

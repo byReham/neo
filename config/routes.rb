@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   get 'password_reset/edit'
 
-  root 'pages#home'
-  get  '/help',       to: 'pages#help'
+  root 'products#index'
   get  '/about',      to: 'pages#about'
   get  '/contact',    to: 'pages#contact'
+  get  '/delivery',   to: 'pages#delivery'
   
   get  '/signup',     to: 'users#new'
   post '/signup',     to: 'users#create'
